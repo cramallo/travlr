@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       console.log("error");
       return;
     }
-    let usuario=new Usuario(form.value.email,form.value.password,form.value.recuerdame);
+    let usuario=new Usuario(form.value.email,form.value.password,"","",form.value.recuerdame);
     this._usuarioService.login(usuario).subscribe(
       res=>{
         console.log(res.token);
