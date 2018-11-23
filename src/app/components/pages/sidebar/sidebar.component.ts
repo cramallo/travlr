@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 declare function init_plugins();
 
 @Component({
-  selector: 'app-grupos',
-  templateUrl: './grupos.component.html',
-  styleUrls: ['./grupos.component.css']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class GruposComponent implements OnInit {
+export class SidebarComponent implements OnInit {
 
   constructor() { }
 

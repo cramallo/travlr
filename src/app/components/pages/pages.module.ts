@@ -5,13 +5,15 @@ import { PagesComponent } from './pages.component';
 
 import { GruposComponent } from './grupos/grupos.component';
 import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
     declarations: [
         PagesComponent,
         GruposComponent,
-        HeaderComponent
+        HeaderComponent,
+        SidebarComponent
     ],
     exports: [
        PagesComponent,
