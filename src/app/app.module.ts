@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { APP_ROUTES } from './app.routes';
-import { PagesModule } from './components/pages/pages.module';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { PagesModule } from './components/pages/pages.module';
 import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
@@ -15,11 +14,11 @@ import { UsuarioService } from './services/usuario.service';
     LoginComponent    
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,    
+    BrowserModule,    
+    FormsModule,
     APP_ROUTES,
-    PagesModule  
+    HttpClientModule,   
+    PagesModule 
   ],
   providers: [
     UsuarioService   
