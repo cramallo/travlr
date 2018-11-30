@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       console.log("error");
       return;
     }
-    let usuario=new Usuario(form.value.email,form.value.password,form.value.nombre,form.value.nickname,false);
+    let usuario=new Usuario(form.value.nombre,form.value.password,form.value.email,form.value.nick,false);
     this._usuarioService.register(usuario).subscribe(
       res=>{
         console.log("Registro exitoso");

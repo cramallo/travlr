@@ -1,9 +1,9 @@
 export class Usuario{
     constructor(
-        public email:string,
-        public password:string,
-        public nombre:string,
-        public nickname:string,
-        public recuerdame:boolean
+        public Nombre:string,
+        public Password:string,
+        public Email:string,          
+        public NickName:string,
+        public RememberMe:boolean
     ){}
 }

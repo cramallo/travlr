@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../../../services/usuario.service';
 
 declare function init_plugins();
 
@@ -9,10 +10,14 @@ declare function init_plugins();
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _usuarioService:UsuarioService) { }
 
   ngOnInit() {
     init_plugins();
+  }
+
+  logout(){
+    this._usuarioService.logout();
   }
 
 }
