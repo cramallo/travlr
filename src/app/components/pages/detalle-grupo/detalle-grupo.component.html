@@ -35,16 +35,24 @@
     <!-- Card -->
     <div class="card">
       <div class="card-body">   
-          <button type="button" class="btn waves-effect waves-light btn-info pull-right"><i class="ti-plus text active" aria-hidden="true"></i></button>        
+          <!--button type="button" class="btn waves-effect waves-light btn-info pull-right"><i class="ti-plus text active" aria-hidden="true"></i></button>         -->
+          <div class="btn-group ml-auto m-t-10 pull-right">
+              <a href="JavaScript:void(0)" class="icon-options-vertical link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="javascript:void(0)">Agregar Miembro</a>                  
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="javascript:void(0)">Abandonar el grupo</a>
+              </div>
+          </div>
         <h4 class="card-title">Integrantes</h4>
         <div class="table-responsive m-t-40">
           <table class="table stylish-table">
             <thead>
               <tr>
-                <th colspan="2">Assigned</th>
-                <th>Name</th>
-                <th>Priority</th>
-                <th>Budget</th>
+                <th colspan="2">Nombre</th>
+                <th>Nick</th>
+                <th>Rol</th>
+                <th>Eliminar</th>
               </tr>
             </thead>
             <tbody>
