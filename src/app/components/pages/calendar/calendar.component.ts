@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 declare function init_plugins();
 declare function init_calendar();
+declare function init_idioma();
 
 @Component({
   selector: 'app-calendar',
@@ -13,8 +14,12 @@ export class CalendarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+      
     init_plugins();    
-    init_calendar();     
+    init_calendar();   
+    init_idioma();
+    
+    
   }
 
 }
