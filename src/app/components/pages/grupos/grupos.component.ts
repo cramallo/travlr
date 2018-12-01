@@ -9,10 +9,16 @@ declare function init_plugins();
 })
 export class GruposComponent implements OnInit {
 
+  grupos=[];
+
   constructor() { }
 
   ngOnInit() {
     //init_plugins();
+  }
+
+  detalle(){
+    console.log("detalle");
   }
 
 }

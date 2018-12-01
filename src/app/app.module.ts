@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PagesModule } from './components/pages/pages.module';
 import { UsuarioService } from './services/usuario.service';
 import { RegisterComponent } from './components/register/register.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RegisterComponent } from './components/register/register.component';
     PagesModule 
   ],
   providers: [
+    CookieService,
     UsuarioService   
   ],
   bootstrap: [AppComponent]
