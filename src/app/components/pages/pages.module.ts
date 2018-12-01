@@ -7,6 +7,7 @@ import { GruposComponent } from './grupos/grupos.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DetalleGrupoComponent } from './detalle-grupo/detalle-grupo.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 
@@ -16,7 +17,8 @@ import { DetalleGrupoComponent } from './detalle-grupo/detalle-grupo.component';
         GruposComponent,
         HeaderComponent,
         SidebarComponent,
-        DetalleGrupoComponent
+        DetalleGrupoComponent,
+        CalendarComponent
     ],
     exports: [
        PagesComponent,
