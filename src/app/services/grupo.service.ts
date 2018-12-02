@@ -28,8 +28,7 @@ export class GrupoService {
     return this.http.post("https://travlrsipii.herokuapp.com/api/v1/GruposApi/Unirse",objeto);
   }
 
-  dejarGrupo(id:number){
-    let objeto={grupoID:id};
-    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/GruposApi/DejarGrupo",objeto);
+  dejarGrupo(id:number){    
+    return this.http.get("https://travlrsipii.herokuapp.com/api/v1/GruposApi/DejarGrupo?id="+id);
   }
 }
