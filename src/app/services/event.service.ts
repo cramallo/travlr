@@ -12,7 +12,8 @@ export class EventService {
     let data: any = [
       {
         title: "All Day Event",
-        start: yearMonth + "-01"
+        start: yearMonth + "-01",
+        color:'#378006'
       },
       {
         title: "Long Event",
@@ -28,21 +29,7 @@ export class EventService {
         id: 999,
         title: "Repeating Event",
         start: yearMonth + "-16T16:00:00"
-      },
-      {
-        title: "Conference",
-        start: yearMonth + "-11",
-        end: yearMonth + "-13"
-      },
-      {
-        title: "Meeting",
-        start: yearMonth + "-12T10:30:00",
-        end: yearMonth + "-12T12:30:00"
-      },
-      {
-        title: "Lunch",
-        start: yearMonth + "-12T12:00:00"
-      },
+      },            
       {
         title: "Meeting",
         start: yearMonth + "-12T14:30:00"

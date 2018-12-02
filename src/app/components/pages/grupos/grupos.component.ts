@@ -2,8 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { GrupoService } from "../../../services/grupo.service";
 import { Grupo } from "../../../models/grupo";
 import { Router } from '@angular/router';
+import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 declare function init_plugins();
+declare var swal:any;
 
 @Component({
   selector: "app-grupos",
@@ -164,5 +166,31 @@ export class GruposComponent implements OnInit {
         ]
       }
     ];
+  }
+
+  unirse(data:any){
+    console.log(data);
+    this._grupoService.unirse(data).subscribe(
+      rta=>{
+        console.log(rta);
+        //this.getGrupos();
+      },
+      err=>{
+        console.log("error al unirse a un grupo");
+      }
+    );
+  }
+
+  nuevo(data:any){
+    console.log(data);
+    this._grupoService.crear(data).subscribe(
+      rta=>{
+        console.log(rta);
+        //this.getGrupos();
+      },
+      err=>{
+        console.log("error al crear grupo");
+      }
+    )
   }
 }

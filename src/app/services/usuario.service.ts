@@ -38,10 +38,10 @@ export class UsuarioService {
     this.cookieService.delete('.AspNetCore.Identity.Application');
     console.log("supuestamente borre el token"+localStorage.getItem('token'));
     //let url= "http://travlrsipii.herokuapp.com/api/v1/AccountApi/SignIn";    
-    let url= "http://travlrsipii.herokuapp.com/api/v1/AccountAPI/SignIn"   
+    let url= "https://travlrsipii.herokuapp.com/api/v1/AccountApi/SignIn"   
     //console.log(JSON.stringify(usuario));    
-    //let usuarioLogin=new Login("charly@gmail.com","123456");   
-    return this.http.post<any>(url,usuario);
+    let usuarioLogin=new Login("charly","charly@gmail.com","123456",true);   
+    return this.http.post<any>(url,usuarioLogin);
   }
 
   logout(){
@@ -61,7 +61,7 @@ export class UsuarioService {
   }
 
   getUser(){
-    let url= "http://travlrsipii.herokuapp.com/api/v1/AccountApi/Me";
+    let url= "https://travlrsipii.herokuapp.com/api/v1/AccountApi/Me";
     return this.http.get<any>(url,httpOptions);
   }
 

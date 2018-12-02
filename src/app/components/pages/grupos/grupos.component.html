@@ -1,3 +1,16 @@
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-themecolor">Grupos De Viaje</h3>
+  </div>
+  <div class="col-md-7 align-self-center">
+    <!-- <button type="button" class="btn waves-effect waves-light btn-outline-primary pull-right" (click)="unirse()">Unirse</button>
+    <button type="button" class="btn waves-effect waves-light btn-outline-primary pull-right">Crear</button> -->
+    <div class="button-box">
+        <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#nuevo" data-whatever="@fat">Nuevo</button> 
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#unirse" data-whatever="@mdo">Unirse</button>                     
+    </div>
+  </div>  
+</div>
 <div class="row">
   <div *ngFor="let grupo of gruposDetalle" class="col-lg-6 col-md-12 cont" (click)="detalle(grupo.grupoID)">
     <div class="card">
@@ -192,6 +205,80 @@
     </div>
    </div-->
 </div>
+
+
+
+<!-- MODAL -->
+
+<!-- <div class="col-md-4">
+  <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Modal based on trigger button</h4> -->
+          <!-- sample modal content -->
+          <!-- <div class="button-box">
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#nuevo" data-whatever="@fat">Nuevo</button> 
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#unirse" data-whatever="@mdo">Unirse</button>                     
+          </div> -->
+
+          <!-- MODAL UNIRSE A UN GRUPO -->
+          <div class="modal fade" id="unirse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title" id="exampleModalLabel1">Unirse a un grupo</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+                      <div class="modal-body">
+                          <form #n="ngForm" (ngSubmit)="unirse(n.value)">
+                              <div class="form-group">
+                                  <label for="recipient-name" class="control-label">ID de grupo:</label>
+                                  <input type="number" name="idGrupo" class="form-control" id="idGrupo" ngModel required>
+                              </div>           
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button submit" class="btn btn-info">Confirmar</button>
+                              </div>                   
+                          </form>
+                      </div>                     
+                  </div>
+              </div>
+          </div>
+          <!-- FIN MODAL UNIRSE A UN GRUPO -->
+
+          <!-- MODAL CREAR GRUPO -->
+          <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel1">Nuevo Grupo</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form #f="ngForm" (ngSubmit)="nuevo(f.value)">
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Nombre de grupo:</label>
+                                <input type="text" name="nombre" class="form-control" id="nombre" ngModel required>
+                            </div>           
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                              <button type="button submit" class="btn btn-info">Confirmar</button>
+                            </div>                   
+                        </form>
+                    </div>                     
+                </div>
+            </div>
+           </div>
+          <!-- FIN MODAL CREAR GRUPO -->
+
+        <!-- /.modal -->
+      <!-- </div>
+  </div>
+</div> -->
+
+<!-- FIN MODAL -->
+
+
+
 
 <!-- footer -->
 <!-- ============================================================== -->

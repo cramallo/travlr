@@ -23,7 +23,7 @@ export class FullcalendarComponent implements OnInit {
         header: {
           left: "prev,next today",
           center: "title",
-          right: "month,agendaWeek,agendaDay,listMonth"
+          right: "month,agendaWeek,listMonth"
         },
         events: data
       };

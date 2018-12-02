@@ -13,13 +13,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DetalleGrupoComponent } from './detalle-grupo/detalle-grupo.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { GrupoService } from '../../services/grupo.service';
-import { ActividadComponent } from '../pages/actividad/actividad.component';
 import { FullcalendarComponent } from '../pages/fullcalendar/fullcalendar.component';
 
 //FULL CALENDAR
 import { FullCalendarModule } from 'ng-fullcalendar';
 import { EventService } from '../../services/event.service';
-
 
 
 @NgModule({
@@ -29,8 +27,7 @@ import { EventService } from '../../services/event.service';
         HeaderComponent,
         SidebarComponent,
         DetalleGrupoComponent,
-        CalendarComponent,
-        ActividadComponent,
+        CalendarComponent,        
         FullcalendarComponent
     ],
     exports: [
