@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router'
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { GrupoService } from '../../../services/grupo.service';
 
 @Component({
   selector: 'app-detalle-grupo',
@@ -8,11 +9,22 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 })
 export class DetalleGrupoComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute) { }
+  integrantes:any[];
+
+  constructor(private _grupoService:GrupoService,private route:ActivatedRoute) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
+    let id=this.route.snapshot.paramMap.get('id');
     console.log("en detalle id"+id);
+    this._grupoService.getDetalleGrupo(+id).subscribe(
+      rta=>{
+          
+    },
+    err=>{
+
+    }
+    )
+
   }
 
 }

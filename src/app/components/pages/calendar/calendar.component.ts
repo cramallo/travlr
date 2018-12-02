@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
 
 declare function init_plugins();
 declare function init_calendar();
@@ -11,14 +12,22 @@ declare function init_calendar();
 })
 export class CalendarComponent implements OnInit {
 
+  @ViewChild("calendar") el: ElementRef;
+
   constructor() { }
 
-  ngOnInit() {
-      
+  ngOnInit() {      
     init_plugins();    
-    init_calendar();   
-    
-    
+    init_calendar();
+
+  }
+
+  ngOnChange(){
+    console.log(this.el);
+  }
+
+  fecha($event){
+    console.log($event);
   }
 
 }

@@ -46,7 +46,7 @@
               </div>
               <div class="col-lg-9">
                 <div class="card-body b-l calender-sidebar">
-                  <div id="calendar"></div>
+                  <div id="calendar" #calendar (click)="fecha($event)"></div>
                 </div>
               </div>
             </div>
@@ -59,7 +59,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title"><strong>Add Event</strong></h4>
+            <h4 class="modal-title"><strong>Agregar Actividad</strong></h4>
             <button
               type="button"
               class="close"
