@@ -31,6 +31,7 @@ export class UsuarioService {
     }else{
       this.token='';
     }
+    console.log(this.cookieService.get('.AspNetCore.Identity.Application'));
   }
 
   login(usuario:Usuario):Observable<any>{

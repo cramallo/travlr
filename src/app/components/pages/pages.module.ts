@@ -18,6 +18,9 @@ import { FullcalendarComponent } from '../pages/fullcalendar/fullcalendar.compon
 //FULL CALENDAR
 import { FullCalendarModule } from 'ng-fullcalendar';
 import { EventService } from '../../services/event.service';
+import { ActividadesComponent } from './actividades/actividades.component';
+import { FondoComunComponent } from './fondo-comun/fondo-comun.component';
+import { EncuestasComponent } from './encuestas/encuestas.component';
 
 
 @NgModule({
@@ -28,7 +31,7 @@ import { EventService } from '../../services/event.service';
         SidebarComponent,
         DetalleGrupoComponent,
         CalendarComponent,        
-        FullcalendarComponent
+        FullcalendarComponent, ActividadesComponent, FondoComunComponent, EncuestasComponent
     ],
     exports: [
        PagesComponent,

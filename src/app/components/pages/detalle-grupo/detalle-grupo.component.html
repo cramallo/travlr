@@ -1,6 +1,7 @@
 <div class="row page-titles">
   <div class="col-md-5 align-self-center">
-    <h3 class="text-themecolor">San Bernardo 2019</h3>
+    <h3 class="text-themecolor">{{nombreGrupo}}</h3>
+    <h6 class="text-themecolor">Numero De Grupo: {{idGrupo}}</h6>
   </div>
   <div class="col-md-7 align-self-center">
     <ol class="breadcrumb">
@@ -42,13 +43,12 @@
               aria-expanded="false"
             ></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="javascript:void(0)"
+              <a disabled class="dropdown-item" href="javascript:void(0)"
                 >Agregar Miembro</a
               >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="javascript:void(0)"
-                >Abandonar el grupo</a
-              >
+              <a class="dropdown-item" (click)="dejarGrupo()"
+                >Abandonar el grupo</a>
             </div>
           </div>
           <h4 class="card-title">Integrantes</h4>
@@ -59,19 +59,26 @@
                   <th colspan="2">Nombre</th>
                   <th>Nick</th>
                   <th>Rol</th>
-                  <th>Eliminar</th>
+                  <!-- <th>Eliminar</th> -->
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td style="width:50px;"><span class="round">S</span></td>
+                <tr *ngFor="let miembro of integrantes;let i=index" class="active">
+                  <td style="width:50px;">                    
+                    <span *ngIf="i==0 || i==5 || i==10 || i==15 || i==20 || i==25" class="round">{{miembro.userName[0]}}</span>
+                    <span *ngIf="i==1 || i==6 || i==11 || i==16 || i==21 || i==26" class="round round-success">{{miembro.userName[0]}}</span>
+                    <span *ngIf="i==2 || i==7 || i==12 || i==17 || i==22 || i==27" class="round round-primary">{{miembro.userName[0]}}</span>
+                    <span *ngIf="i==3 || i==8 || i==13 || i==18 || i==23 || i==28" class="round round-warning">{{miembro.userName[0]}}</span>
+                    <span *ngIf="i==4 || i==9 || i==14 || i==19 || i==24 || i==29" class="round round-danger">{{miembro.userName[0]}}</span> 
+                  </td>
                   <td>
                     <h6>Sunil Joshi</h6>
                     <small class="text-muted">Web Designer</small>
                   </td>
                   <td>Elite Admin</td>
-                  <td><span class="label label-light-danger">Admin</span></td>
-                  <td>
+                  <td><span class="label label-light-success">Miembro</span></td>
+                <!-- Eliminar boton -->
+                  <!-- <td>
                     <button
                       type="button"
                       class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
@@ -80,110 +87,8 @@
                     >
                       <i class="ti-close" aria-hidden="true"></i>
                     </button>
-                  </td>
-                </tr>
-                <tr class="active">
-                  <td>
-                    <span class="round"
-                      ><img
-                        src="../assets/images/users/2.jpg"
-                        alt="user"
-                        width="50"
-                    /></span>
-                  </td>
-                  <td>
-                    <h6>Andrew</h6>
-                    <small class="text-muted">Project Manager</small>
-                  </td>
-                  <td>Real Homes</td>
-                  <td><span class="label label-light-info">Miembro</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i class="ti-close" aria-hidden="true"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="round round-success">B</span></td>
-                  <td>
-                    <h6>Bhavesh patel</h6>
-                    <small class="text-muted">Developer</small>
-                  </td>
-                  <td>MedicalPro Theme</td>
-                  <td><span class="label label-light-info">Miembro</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i class="ti-close" aria-hidden="true"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="round round-primary">N</span></td>
-                  <td>
-                    <h6>Nirav Joshi</h6>
-                    <small class="text-muted">Frontend Eng</small>
-                  </td>
-                  <td>Elite Admin</td>
-                  <td><span class="label label-light-info">Miembro</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i class="ti-close" aria-hidden="true"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="round round-warning">M</span></td>
-                  <td>
-                    <h6>Micheal Doe</h6>
-                    <small class="text-muted">Content Writer</small>
-                  </td>
-                  <td>Helping Hands</td>
-                  <td><span class="label label-light-info">Miembro</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i class="ti-close" aria-hidden="true"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="round round-danger">N</span></td>
-                  <td>
-                    <h6>Johnathan</h6>
-                    <small class="text-muted">Graphic</small>
-                  </td>
-                  <td>Digital Agency</td>
-                  <td><span class="label label-light-info">Miembro</span></td>
-                  <td>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn"
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i class="ti-close" aria-hidden="true"></i>
-                    </button>
-                  </td>
-                </tr>
+                  </td> -->
+                </tr>                     
               </tbody>
             </table>
           </div>
@@ -193,9 +98,10 @@
 
   <!--ACTIVIDADES-->
   <div class="col-lg-5 col-xlg-7 col-md-12">
-    <div class="card">        
+    <app-actividades></app-actividades>
+    <!-- <div class="card">         -->
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs profile-tab" role="tablist">
+      <!-- <ul class="nav nav-tabs profile-tab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#home" role="tab"
             >Calendario</a
@@ -208,121 +114,17 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="tab" href="#settings" role="tab"
-            >Configuración</a
+            >Fechas Elegidas</a
           >
         </li>
         
-      </ul>
+      </ul> -->
       <!-- Tab panes -->
-      <div class="tab-content">        
+      <!-- <div class="tab-content">         -->
         <!-- <app-calendar></app-calendar>         -->
-        <app-fullcalendar></app-fullcalendar>
-        <!-- second tab -->
-        <!-- <div class="tab-pane" id="profile" role="tabpanel">
-          <div class="card-body">            
-            <div class="row">                
-              <div class="col-md-3 col-xs-6 b-r">
-                <strong>Full Name</strong> <br />
-                <p class="text-muted">Johnathan Deo</p>
-              </div>
-              <div class="col-md-3 col-xs-6 b-r">
-                <strong>Mobile</strong> <br />
-                <p class="text-muted">(123) 456 7890</p>
-              </div>
-              <div class="col-md-3 col-xs-6 b-r">
-                <strong>Email</strong> <br />
-                <p class="text-muted">johnathan@admin.com</p>
-              </div>
-              <div class="col-md-3 col-xs-6">
-                <strong>Location</strong> <br />
-                <p class="text-muted">London</p>
-              </div>
-            </div>
-            <hr />
-            <p class="m-t-30">
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-              arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-              justo. Nullam dictum felis eu pede mollis pretium. Integer
-              tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean
-              vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
-              consequat vitae, eleifend ac, enim.
-            </p>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries
-            </p>
-            <p>
-              It was popularised in the 1960s with the release of Letraset
-              sheets containing Lorem Ipsum passages, and more recently with
-              desktop publishing software like Aldus PageMaker including
-              versions of Lorem Ipsum.
-            </p>
-            <h4 class="font-medium m-t-30">Skill Set</h4>
-            <hr />
-            <h5 class="m-t-30">
-              Wordpress <span class="pull-right">80%</span>
-            </h5>
-            <div class="progress">
-              <div
-                class="progress-bar bg-success"
-                role="progressbar"
-                aria-valuenow="80"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="width:80%; height:6px;"
-              >
-                <span class="sr-only">50% Complete</span>
-              </div>
-            </div>
-            <h5 class="m-t-30">HTML 5 <span class="pull-right">90%</span></h5>
-            <div class="progress">
-              <div
-                class="progress-bar bg-info"
-                role="progressbar"
-                aria-valuenow="90"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="width:90%; height:6px;"
-              >
-                <span class="sr-only">50% Complete</span>
-              </div>
-            </div>
-            <h5 class="m-t-30">jQuery <span class="pull-right">50%</span></h5>
-            <div class="progress">
-              <div
-                class="progress-bar bg-danger"
-                role="progressbar"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="width:50%; height:6px;"
-              >
-                <span class="sr-only">50% Complete</span>
-              </div>
-            </div>
-            <h5 class="m-t-30">
-              Photoshop <span class="pull-right">70%</span>
-            </h5>
-            <div class="progress">
-              <div
-                class="progress-bar bg-warning"
-                role="progressbar"
-                aria-valuenow="70"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="width:70%; height:6px;"
-              >
-                <span class="sr-only">50% Complete</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!--fin second tab-->        
+        <!-- <app-fullcalendar></app-fullcalendar>       
       </div>
-    </div>
+    </div> -->
   </div>
   <!--FIN ACTIVIDADES-->
 
