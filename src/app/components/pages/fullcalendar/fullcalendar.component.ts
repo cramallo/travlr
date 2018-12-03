@@ -4,7 +4,6 @@ import { Options } from "fullcalendar";
 import { EventService } from "../../../services/event.service";
 import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 import { GrupoService } from "../../../services/grupo.service";
-
 import { map } from "rxjs/operators";
 
 //MODELS
@@ -66,9 +65,12 @@ export class FullcalendarComponent implements OnInit {
     this._grupoService.crearActividad(actividad).subscribe(
       rta => {
         this.getActividades();
+        document.getElementById("cancelar").click();
       },
       err => {
+        //SACAR
         this.cargarEvento();
+        document.getElementById("cancelar").click();
       }
     );
   }
@@ -98,10 +100,11 @@ export class FullcalendarComponent implements OnInit {
    this.ucCalendar.fullCalendar('addEventSource',this.eventos);
   }
 
+  //HARDCODEO
   cargarEvento() {   
     this.eventos.push({
       title: "All Day Event",
-      start:  "2018-12-22T00:00:00"      
+      start: "2019-01-01T00:00:00"      
     });       
     this.cargarCalendar();   
   } 
