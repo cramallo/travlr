@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this._usuarioService.login(usuario).subscribe(
       res=>{
         console.log(res);
-        localStorage.setItem('token',res.token);
+        localStorage.setItem('token','Bearer ' + res.token);
         console.log(localStorage.getItem('token'));
         this._usuarioService.cargarStorage();
         this.router.navigate(['/grupos']);
