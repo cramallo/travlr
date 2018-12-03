@@ -1,0 +1,14 @@
+.margin-top-30{
+    margin-top:30px;
+}
+
+.text-monto{
+    color: #06d79c;
+    font-size: 65px;
+    margin-top:60px;
+}
+
+.monto-box{
+    display:flex;
+    justify-content: center;
+}
