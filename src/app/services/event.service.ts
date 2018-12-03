@@ -1,10 +1,9 @@
 import { Inject, Injectable } from "@angular/core";
-import { of } from 'rxjs';
+import { of } from "rxjs";
 import { Observable } from "rxjs/internal/Observable";
 
 @Injectable()
 export class EventService {
-  
   public getEvents(): Observable<any> {
     const dateObj = new Date();
     const yearMonth =
@@ -13,7 +12,7 @@ export class EventService {
       {
         title: "All Day Event",
         start: yearMonth + "-01",
-        color:'#378006'
+        color: "#378006"
       },
       {
         title: "Long Event",
@@ -29,7 +28,7 @@ export class EventService {
         id: 999,
         title: "Repeating Event",
         start: yearMonth + "-16T16:00:00"
-      },            
+      },
       {
         title: "Meeting",
         start: yearMonth + "-12T14:30:00"
@@ -50,8 +49,12 @@ export class EventService {
         title: "Click for Google",
         url: "http://google.com/",
         start: yearMonth + "-28"
+      },
+      {
+        title: "nosee",
+        start: "2018-12-22T00:00:00"
       }
     ];
     return of(data);
   }
-};
+}

@@ -11,7 +11,6 @@ import { GruposComponent } from './grupos/grupos.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DetalleGrupoComponent } from './detalle-grupo/detalle-grupo.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { GrupoService } from '../../services/grupo.service';
 import { FullcalendarComponent } from '../pages/fullcalendar/fullcalendar.component';
 
@@ -29,8 +28,7 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
         GruposComponent,
         HeaderComponent,
         SidebarComponent,
-        DetalleGrupoComponent,
-        CalendarComponent,        
+        DetalleGrupoComponent,             
         FullcalendarComponent, ActividadesComponent, FondoComunComponent, EncuestasComponent
     ],
     exports: [
@@ -40,12 +38,7 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
     ],
     imports: [        
         BrowserModule,
-        FullCalendarModule,
-        /*BrowserAnimationsModule,
-        CalendarModule.forRoot({
-          provide: DateAdapter,
-          useFactory: adapterFactory
-        }),*/
+        FullCalendarModule,        
         PAGES_ROUTES,
         FormsModule,        
     ],

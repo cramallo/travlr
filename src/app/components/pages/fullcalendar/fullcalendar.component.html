@@ -4,41 +4,43 @@
     <div class="card">
       <div class="">
         <div class="row">
-          <!-- <div class="col-lg-3">
-            <div class="card-body">
-              <h4 class="card-title m-t-10">Drag & Drop Event</h4>
-              <div class="row">
-                <div class="col-md-12">
-                  <div id="calendar-events" class="">
-                    <div class="calendar-events" data-class="bg-info">
-                      <i class="fa fa-circle text-info"></i> My Event One
+          <!--
+            <div class="col-lg-3">
+              <div class="card-body">
+                <h4 class="card-title m-t-10">Drag & Drop Event</h4>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="calendar-events" class="">
+                      <div class="calendar-events" data-class="bg-info">
+                        <i class="fa fa-circle text-info"></i> My Event One
+                      </div>
+                      <div class="calendar-events" data-class="bg-success">
+                        <i class="fa fa-circle text-success"></i> My Event Two
+                      </div>
+                      <div class="calendar-events" data-class="bg-danger">
+                        <i class="fa fa-circle text-danger"></i> My Event Three
+                      </div>
+                      <div class="calendar-events" data-class="bg-warning">
+                        <i class="fa fa-circle text-warning"></i> My Event Four
+                      </div>
                     </div>
-                    <div class="calendar-events" data-class="bg-success">
-                      <i class="fa fa-circle text-success"></i> My Event Two
+                    <div class="checkbox m-t-20">
+                      <input id="drop-remove" type="checkbox" />
+                      <label for="drop-remove"> Remove after drop </label>
                     </div>
-                    <div class="calendar-events" data-class="bg-danger">
-                      <i class="fa fa-circle text-danger"></i> My Event Three
-                    </div>
-                    <div class="calendar-events" data-class="bg-warning">
-                      <i class="fa fa-circle text-warning"></i> My Event Four
-                    </div>
-                  </div>                 
-                  <div class="checkbox m-t-20">
-                    <input id="drop-remove" type="checkbox" />
-                    <label for="drop-remove"> Remove after drop </label>
+                    <a
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#add-new-event"
+                      class="btn m-t-10 btn-info btn-block waves-effect waves-light"
+                    >
+                      <i class="ti-plus"></i> Add New Event
+                    </a>
                   </div>
-                  <a
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#add-new-event"
-                    class="btn m-t-10 btn-info btn-block waves-effect waves-light"
-                  >
-                    <i class="ti-plus"></i> Add New Event
-                  </a>
                 </div>
               </div>
             </div>
-          </div> -->
+          -->
           <div class="col-lg-12">
             <div class="card-body b-l calender-sidebar">
               <div *ngIf="calendarOptions" id="calendar">
@@ -60,5 +62,31 @@
   </div>
 </div>
 
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#nuevo">Open Modal</button>
 
-
+<div  class="modal fade" id="nuevo"  tabindex="-1"  role="dialog"  aria-labelledby="exampleModalLabel1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Nueva Actividad</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #f="ngForm" (ngSubmit)="nuevaActividad(f.value)">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Nombre de actividad:</label>
+            <input type="text" name="nombre" class="form-control" id="nombre" ngModel required/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button submit" class="btn btn-info">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
