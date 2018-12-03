@@ -42,7 +42,7 @@ export class UsuarioService {
     let url= "https://travlrsipii.herokuapp.com/api/v1/AccountApi/SignIn"   
     //console.log(JSON.stringify(usuario));    
     let usuarioLogin=new Login("charly","charly@gmail.com","123456",true);   
-    return this.http.post<any>(url,usuarioLogin);
+    return this.http.post<any>(url,usuario);
   }
 
   logout(){
@@ -63,7 +63,7 @@ export class UsuarioService {
 
   getUser(){
     let url= "https://travlrsipii.herokuapp.com/api/v1/AccountApi/Me";
-    return this.http.get<any>(url,httpOptions);
+    return this.http.get(url,httpOptions);
   }
 
 }
