@@ -34,7 +34,7 @@ export class FullcalendarComponent implements OnInit {
   ) {}
 
   ngOnInit() {      
-    this.idGrupo=this.route.snapshot.paramMap.get("id");
+    this.idGrupo=this._grupoService.getIdActual();
     this.calendarOptions = {
       editable: true,
       eventLimit: true,
