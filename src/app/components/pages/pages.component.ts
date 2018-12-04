@@ -19,12 +19,8 @@ export class PagesComponent implements OnInit {
 
   getUser(){
     this._usuarioService.getUser().subscribe(
-      rta=>{
-        this.usuario=rta.map(res=>{
-          let usuario=new Usuario(res.userName,res.password,res.email,res.nickName,false);
-          return usuario;
-        });
-        console.log(JSON.stringify(this.usuario));
+      rta=>{              
+        this.usuario=new Usuario(rta.userName,"",rta.email,rta.nickName,false);               
       },
       err=>{
         console.log("Error me");

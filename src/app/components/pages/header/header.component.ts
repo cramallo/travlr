@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { UsuarioService } from '../../../services/usuario.service';
+import { Usuario } from '../../../models/usuario';
 
 declare function init_plugins();
 
@@ -10,7 +11,7 @@ declare function init_plugins();
 })
 export class HeaderComponent implements OnInit {
 
-  @Input('usuario')usuario:any;
+  @Input('usuario')usuario:Usuario=new Usuario("","","","",false);
 
   constructor(private _usuarioService:UsuarioService) { }
 
@@ -19,7 +20,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnChanges(){
-    this.cargargarDatos();
+    console.log("hola");
+    console.log(this.usuario);
   }
 
   logout(){

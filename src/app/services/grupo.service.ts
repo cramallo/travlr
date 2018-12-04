@@ -20,11 +20,11 @@ export class GrupoService {
   constructor(private http:HttpClient) { }
 
   getGrupos(){
-    return this.http.get("http://travlrsipii.herokuapp.com/api/v1/GruposApi",httpOptions);
+    return this.http.get<any>("https://travlrsipii.herokuapp.com/api/v1/GruposApi",httpOptions);
   }
 
   getDetalleGrupo(id:number){
-    return this.http.get<any[]>("http://travlrsipii.herokuapp.com/api/v1/GruposApi/detalles?id="+id,httpOptions);
+    return this.http.get<any[]>("https://travlrsipii.herokuapp.com/api/v1/GruposApi/detalles?id="+id,httpOptions);
   }
 
   crear(nombreGrupo:string){
