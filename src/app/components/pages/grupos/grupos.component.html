@@ -15,8 +15,9 @@
   <div *ngFor="let grupo of gruposDetalle" class="col-lg-6 col-md-12 cont" (click)="detalle(grupo.grupoID)">
     <div class="card">
       <div class="card-body">
-        <div class="d-flex">
+        <div class="">
           <div>
+              <button type="button" class="btn ml-auto btn-sm btn-info btn-rounded pull-right"> Entrar</button>
             <h4 class="card-title">
               <span class="lstick"></span>{{grupo.nombreGrupo}}
             </h4>
@@ -40,7 +41,6 @@
                   <span *ngIf="i==3 || i==8 || i==13 || i==18 || i==23 || i==28" class="round round-warning">{{usuario.userName[0]}}</span>
                   <span *ngIf="i==4 || i==9 || i==14 || i==19 || i==24 || i==29" class="round round-danger">{{usuario.userName[0]}}</span>
                 </td>
-                <td>
                 <td>
                   <h6>{{usuario.userName}}</h6>
                   <small class="text-muted">{{usuario.email}}</small>
