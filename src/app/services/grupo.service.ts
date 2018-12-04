@@ -5,6 +5,13 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Actividad } from '../models/actividad';
 import { map } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': localStorage.getItem('token')
+  })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,11 +20,11 @@ export class GrupoService {
   constructor(private http:HttpClient) { }
 
   getGrupos(){
-    return this.http.get("http://travlrsipii.herokuapp.com/api/v1/GruposApi");
+    return this.http.get("http://travlrsipii.herokuapp.com/api/v1/GruposApi",httpOptions);
   }
 
   getDetalleGrupo(id:number){
-    return this.http.get<any[]>("http://travlrsipii.herokuapp.com/api/v1/GruposApi/detalles?id="+id);
+    return this.http.get<any[]>("http://travlrsipii.herokuapp.com/api/v1/GruposApi/detalles?id="+id,httpOptions);
   }
 
   crear(nombreGrupo:string){

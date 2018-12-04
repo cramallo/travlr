@@ -29,7 +29,7 @@ export class GruposComponent implements OnInit {
         console.log(rta);
         this.grupos = rta;
       },
-      err => {
+      err => {        
         /*Hardcodeo*/
         this.grupos = [
           {
