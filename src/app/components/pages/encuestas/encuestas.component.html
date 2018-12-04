@@ -31,10 +31,12 @@
             </div>
             <div class="col-lg-12">
               <div class="pull-right">
-                <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 " data-toggle="modal">Votar</button>
+                <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 "
+                  data-toggle="modal">Votar</button>
               </div>
               <div class="pull-right">
-                <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10" data-toggle="modal">Agregar opción</button>
+                <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10"
+                  data-toggle="modal" data-target="#agregarOpcion" data-whatever="@fat">Agregar opción</button>
               </div>
             </div>
           </div>
@@ -68,12 +70,13 @@
             <label for="minimal-radio-24">Nadar en lago</label>
           </div>
           <div class="col-lg-12">
-              <div class="pull-right">
-                  <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 " data-toggle="modal">Votar</button>
-                </div>
-                <div class="pull-right">
-                  <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10" data-toggle="modal">Agregar opción</button>
-                </div>
+            <div class="pull-right">
+              <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 " data-toggle="modal">Votar</button>
+            </div>
+            <div class="pull-right">
+              <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10" data-toggle="modal"
+                data-target="#agregarOpcion" data-whatever="@fat">Agregar opción</button>
+            </div>
           </div>
         </div>
       </div>
@@ -106,12 +109,14 @@
               <label for="minimal-radio-14">Puerto Madryn</label>
             </div>
             <div class="col-lg-12">
-                <div class="pull-right">
-                    <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 " data-toggle="modal">Votar</button>
-                  </div>
-                  <div class="pull-right">
-                    <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10" data-toggle="modal">Agregar opción</button>
-                  </div>
+              <div class="pull-right">
+                <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 "
+                  data-toggle="modal">Votar</button>
+              </div>
+              <div class="pull-right">
+                <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10"
+                  data-toggle="modal" data-target="#agregarOpcion" data-whatever="@fat">Agregar opción</button>
+              </div>
             </div>
           </div>
         </div>
@@ -144,24 +149,154 @@
             <label for="minimal-radio-24">Nadar en lago</label>
           </div>
           <div class="col-lg-12">
-              <div class="pull-right">
-                  <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 " data-toggle="modal">Votar</button>
-                </div>
-                <div class="pull-right">
-                  <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10" data-toggle="modal">Agregar opción</button>
-                </div>
+            <div class="pull-right">
+              <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10 " data-toggle="modal">Votar</button>
+            </div>
+            <div class="pull-right">
+              <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-10" data-toggle="modal"
+                data-target="#agregarOpcion" data-whatever="@fat">Agregar opción</button>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
     <div class="col-lg-12">
       <div class="pull-right">
-        <button type="button" class="btn btn-info  margin-10" data-toggle="modal">Ver resultados</button>
+        <button type="button" class="btn btn-info  margin-10" data-toggle="modal" data-target="#resultadosEncuestas"
+          data-whatever="@fat">Ver resultados</button>
       </div>
       <div class="pull-right">
-        <button type="button" class="btn btn-primary  margin-10" data-toggle="modal">Crear encuesta</button>
+        <button type="button" class="btn btn-primary  margin-10" data-toggle="modal" data-target="#crearEncuesta"
+          data-whatever="@fat">Crear encuesta</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- MODAL CREAR ENCUESTA -->
+<div class="modal fade" id="crearEncuesta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Crear una encuesta</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form #n="ngForm">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Nombre de la encuesta:</label>
+            <input type="text" name="idGrupo" class="form-control" id="nombreEncuesta" ngModel required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button submit" class="btn btn-info">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FIN MODAL CREAR ENCUESTA -->
+
+<!-- MODAL AGREGAR OPCION -->
+<div class="modal fade" id="agregarOpcion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Agregar opción a la encuesta *NOMBRE*</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form #n="ngForm">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Nueva opción:</label>
+            <input type="text" name="idGrupo" class="form-control" id="nombreEncuesta" ngModel required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button submit" class="btn btn-info">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FIN MODAL AGREGAR OPCION -->
+
+<!-- MODAL RESULTADOS ENCUESTAS -->
+<div class="modal fade" id="resultadosEncuestas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Resultados encuestas</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <div class="col-lg-12 col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex">
+                  <div>
+                    <h4 class="card-title">
+                      <span class="lstick"></span>Actividad día 4
+                    </h4>
+                  </div>
+                </div>
+                <div>
+                  <label for="minimal-radio-21">Pesca</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+                <div>
+                  <label for="minimal-radio-22">Canoa</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+                <div>
+                  <label for="minimal-radio-23">Escalar montaña</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+                <div>
+                  <label for="minimal-radio-24">Nadar en lago</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex">
+                  <div>
+                    <h4 class="card-title">
+                      <span class="lstick"></span>Actividad día 4
+                    </h4>
+                  </div>
+                </div>
+                <div>
+                  <label for="minimal-radio-21">Pesca</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+                <div>
+                  <label for="minimal-radio-22">Canoa</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+                <div>
+                  <label for="minimal-radio-23">Escalar montaña</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+                <div>
+                  <label for="minimal-radio-24">Nadar en lago</label>
+                  <span class="label label-rouded label-danger pull-right">25</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FIN MODAL RESULTADOS ENCUESTAS -->
