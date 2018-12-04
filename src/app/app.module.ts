@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagesModule } from './components/pages/pages.module';
 import { UsuarioService } from './services/usuario.service';
+import { GrupoService } from './services/grupo.service';
 import { RegisterComponent } from './components/register/register.component';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -25,7 +26,8 @@ import { CookieService } from 'ngx-cookie-service';
   ],
   providers: [
     CookieService,
-    UsuarioService   
+    UsuarioService,
+    GrupoService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { GrupoService } from "../../../services/grupo.service";
+import { GrupoService } from '../../../services/grupo.service';
 import { Grupo } from "../../../models/grupo";
 import { Router } from '@angular/router';
 import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
@@ -24,50 +24,53 @@ export class GruposComponent implements OnInit {
   }
 
   getGrupos() {
-    this._grupoService.getGrupos().subscribe(
-      rta => {
-        console.log(rta);
-        this.grupos = rta;
-      },
-      err => {        
+    this._grupoService.getGrupos().subscribe(res=>{
+      console.log(res);
+    })
+    // this._grupoService.getGrupos().subscribe(
+    //   rta => {
+    //     console.log(rta);
+    //     this.grupos = rta;
+    //   },
+    //   err => {        
         /*Hardcodeo*/
-        this.grupos = [
-          {
-            grupoID: 2,
-            nombre: "LauchaTeam",
-            fondoComun: null,
-            actividades: null,
-            encuestas: null,
-            fechasDisponibilidad: null,
-            usuarioGrupos: null,
-            administrador: null,
-            monto: 0,
-            encuesta: null,
-            opciones: null,
-            opcionSelect: 0,
-            actividad: null,
-            fechaDisponibilidad: null
-          },
-          {
-            grupoID: 5,
-            nombre: "playa 2018",
-            fondoComun: null,
-            actividades: null,
-            encuestas: null,
-            fechasDisponibilidad: null,
-            usuarioGrupos: null,
-            administrador: null,
-            monto: 0,
-            encuesta: null,
-            opciones: null,
-            opcionSelect: 0,
-            actividad: null,
-            fechaDisponibilidad: null
-          }
-        ];
-        this.cargarDetallesGrupo();
-      }
-    );
+    //     this.grupos = [
+    //       {
+    //         grupoID: 2,
+    //         nombre: "LauchaTeam",
+    //         fondoComun: null,
+    //         actividades: null,
+    //         encuestas: null,
+    //         fechasDisponibilidad: null,
+    //         usuarioGrupos: null,
+    //         administrador: null,
+    //         monto: 0,
+    //         encuesta: null,
+    //         opciones: null,
+    //         opcionSelect: 0,
+    //         actividad: null,
+    //         fechaDisponibilidad: null
+    //       },
+    //       {
+    //         grupoID: 5,
+    //         nombre: "playa 2018",
+    //         fondoComun: null,
+    //         actividades: null,
+    //         encuestas: null,
+    //         fechasDisponibilidad: null,
+    //         usuarioGrupos: null,
+    //         administrador: null,
+    //         monto: 0,
+    //         encuesta: null,
+    //         opciones: null,
+    //         opcionSelect: 0,
+    //         actividad: null,
+    //         fechaDisponibilidad: null
+    //       }
+    //     ];
+    //     this.cargarDetallesGrupo();
+    //   }
+    // );
   }
 
   detalle(id:number) {

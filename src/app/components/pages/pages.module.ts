@@ -11,7 +11,7 @@ import { GruposComponent } from './grupos/grupos.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DetalleGrupoComponent } from './detalle-grupo/detalle-grupo.component';
-import { GrupoService } from '../../services/grupo.service';
+//import { GrupoService } from '../../services/grupo.service';
 import { FullcalendarComponent } from '../pages/fullcalendar/fullcalendar.component';
 
 //FULL CALENDAR
@@ -43,7 +43,7 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
         FormsModule,        
     ],
     providers:[
-        GrupoService,
+        //GrupoService,
         EventService
     ]
 })
