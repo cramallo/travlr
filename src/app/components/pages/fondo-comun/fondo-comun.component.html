@@ -7,10 +7,41 @@
 
   <div class="col-lg-12">
       <div class="pull-right">
-        <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal">Registrar egreso</button>
+        <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal" data-target="#modelRegistrarEgreso">Registrar egreso</button>
       </div>
       <div class="pull-right">
-        <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal">Registrar ingreso</button>
+        <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal" data-target="#modelRegistrarIngreso">Registrar ingreso</button>
       </div>
   </div>
 
+  <div class="modal fade" id="modelRegistrarIngreso" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="col-lg-12">
+            <div class="row align-ct">
+              <p class="fin-format">Monto a ingresar: </p>
+              <input type="number" id="montoIngreso" class="input-monto-style">
+            </div>
+            <div class="row pull-right">
+                <button type="button" class="btn btn-m waves-effect waves-light btn-outline-info btn-aceptar-fondo" data-toggle="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modelRegistrarEgreso" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="col-lg-12">
+              <div class="row align-ct">
+                <p class="fin-format">Monto a egresar: </p>
+                <input type="number" id="montoEgreso" class="input-monto-style">
+              </div>
+              <div class="row pull-right">
+                  <button type="button" class="btn btn-m waves-effect waves-light btn-outline-info btn-aceptar-fondo" data-toggle="modal">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
