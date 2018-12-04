@@ -34,5 +34,6 @@ export class FondoComunComponent implements OnInit {
   egresar(data: any) {
 
   }
+  
 
 }

@@ -17,7 +17,7 @@ export class ActividadesComponent implements OnInit {
   }
 
   onActivate(ComponentRef){
-    ComponentRef.cargarDatos(5);
+    //ComponentRef.cargarDatos(5);
   }
 
 }
