@@ -19,7 +19,8 @@ export class FondoComunComponent implements OnInit {
   ngOnInit() {
     console.log("entroo");
     let id = this.route.snapshot.paramMap.get("id");
-    this._grupoService.getMonto(id).subscribe(
+    console.log("IDDD " + +id);
+    this._grupoService.getMonto(+id).subscribe(
       rta => {
         this.monto = rta;
         console.log(rta);
