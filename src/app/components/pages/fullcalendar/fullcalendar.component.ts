@@ -66,14 +66,10 @@ export class FullcalendarComponent implements OnInit {
     document.getElementById("openModalButton").click();
   }
 
-  nuevaActividad(descripcion: any) {
-    let act = {
-      descripcion: descripcion,
-      fechaHora: this.fechaSelected
-    };
-    console.log("actividad a dar de alta");
-    console.log(act);
-    let actividad = new Actividad(this.idGrupo, act);
+  nuevaActividad(data: any) {    
+    console.log(this.fechaSelected.toString());
+    console.log(this.idGrupo);
+    let actividad = new Actividad(this.idGrupo,data.nombre,this.fechaSelected.toString());
     console.log(JSON.stringify(actividad));
     this._grupoService.crearActividad(actividad).subscribe(
       rta => {

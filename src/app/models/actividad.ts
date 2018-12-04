@@ -1,9 +1,7 @@
-export class Actividad{
-    constructor(
-        public grupoID:number,
-        public actividad:{
-            descripcion:string,
-            fechaHora:string
-        }
-    ){}
+export class Actividad {
+  constructor(
+    public grupoID: number,
+    public descripcion: string,
+    public fechaHora: string
+  ) {}
 }

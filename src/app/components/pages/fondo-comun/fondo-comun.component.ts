@@ -20,10 +20,8 @@ export class FondoComunComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
   
 
-  ngOnInit() {
-    console.log("entroo");
-    this.idGrupo=this._grupoService.getIdActual();
-    console.log("IDDD " + this.idGrupo);
+  ngOnInit() {    
+    this.idGrupo=this._grupoService.getIdActual();    
     this._grupoService.getMonto(this.idGrupo).subscribe(
       rta => {
         this.monto = rta;
