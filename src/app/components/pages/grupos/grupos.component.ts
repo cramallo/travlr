@@ -184,10 +184,17 @@ export class GruposComponent implements OnInit {
     this._grupoService.unirse(data).subscribe(
       rta => {
         console.log(rta);
-        //this.getGrupos();
+        document.getElementById("cancelar").click();
+        this.grupos = [];
+        this.gruposDetalle = [];
+        this.getGrupos();
       },
       err => {
         console.log("error al unirse a un grupo");
+        document.getElementById("cancelar").click();
+        this.grupos = [];
+        this.gruposDetalle = [];
+        this.getGrupos();
       }
     );
   }
@@ -197,10 +204,17 @@ export class GruposComponent implements OnInit {
     this._grupoService.crear(data).subscribe(
       rta => {
         console.log(rta);
-        //this.getGrupos();
+        document.getElementById("cancelar2").click();
+        this.grupos = [];
+        this.gruposDetalle = [];
+        this.getGrupos();
       },
       err => {
         console.log("error al crear grupo");
+        document.getElementById("cancelar2").click();
+        this.grupos = [];
+        this.gruposDetalle = [];
+        this.getGrupos();
       }
     );
   }

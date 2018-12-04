@@ -225,11 +225,11 @@
         <form #n="ngForm" (ngSubmit)="unirse(n.value)">
           <div class="form-group">
             <label for="recipient-name" class="control-label">ID de grupo:</label>
-            <input type="number" name="idGrupo" class="form-control" id="idGrupo" ngModel required>
+            <input type="number" name="GrupoID" class="form-control" id="idGrupo" ngModel required>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            <button type="button submit" class="btn btn-info">Confirmar</button>
+            <button id="cancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-info">Confirmar</button>
           </div>
         </form>
       </div>
@@ -253,8 +253,8 @@
             <input type="text" name="nombre" class="form-control" id="nombre" ngModel required>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            <button type="button submit" class="btn btn-info">Confirmar</button>
+            <button id="cancelar2" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-info">Confirmar</button>
           </div>
         </form>
       </div>
