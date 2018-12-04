@@ -86,7 +86,8 @@
               alt="user"
               class="profile-pic"
           /></a>
-          <div class="dropdown-menu dropdown-menu-right animated flipInY">
+          
+          <div class="dropdown-menu dropdown-menu-right animated flipInY">            
             <ul class="dropdown-user">
               <li>
                 <div class="dw-user-box">
@@ -109,7 +110,7 @@
                 <a href="#"><i class="ti-user"></i> Mi Perfil</a>
               </li>            
               <li>
-                <a href="#"><i class="ti-email"></i>Inbox</a>
+                <a [routerLink]="['/grupos']">Grupos</a>
               </li>
               <li role="separator" class="divider"></li>
               <li>
