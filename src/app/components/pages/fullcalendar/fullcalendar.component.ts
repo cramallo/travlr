@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from "@angular/core";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { CalendarComponent } from "ng-fullcalendar";
 import { Options } from "fullcalendar";
 import { EventService } from "../../../services/event.service";
@@ -27,10 +28,13 @@ export class FullcalendarComponent implements OnInit {
 
   constructor(
     protected eventService: EventService,
-    private _grupoService: GrupoService
+    private _grupoService: GrupoService,
+    private route: ActivatedRoute,
+    private _router: Router
   ) {}
 
   ngOnInit() {      
+    this.idGrupo=this.route.snapshot.paramMap.get("id");
     this.calendarOptions = {
       editable: true,
       eventLimit: true,
@@ -47,11 +51,6 @@ export class FullcalendarComponent implements OnInit {
       },
       events: this.eventos
     };    
-  }
-
-  cargarDatos(id:number){
-    this.idGrupo=id;
-    this.ngOnInit();
     this.getActividades();
   }
  
@@ -65,6 +64,8 @@ export class FullcalendarComponent implements OnInit {
       descripcion: descripcion,
       fechaHora: this.fechaSelected
     };
+    console.log("actividad a dar de alta");
+    console.log(act);
     let actividad = new Actividad(this.idGrupo, act);
 
     this._grupoService.crearActividad(actividad).subscribe(
@@ -72,18 +73,17 @@ export class FullcalendarComponent implements OnInit {
         this.getActividades();
         document.getElementById("cancelar").click();
       },
-      err => {
-        //SACAR
-        this.cargarEvento();
+      err => {        
         document.getElementById("cancelar").click();
       }
     );
   }
 
   getActividades() {
-    this._grupoService.getActividades(6).subscribe(
+    this._grupoService.getActividades(this.idGrupo).subscribe(
       rta => {              
         //Lo vacio para recargar  
+        console.log(JSON.stringify(rta));
         this.eventos=[];
         this.cargarCalendar();
         this.eventos = rta.map(res => {
