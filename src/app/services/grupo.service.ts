@@ -17,6 +17,8 @@ const httpOptions = {
 })
 export class GrupoService {
 
+  idGrupoActual:any;
+
   constructor(private http:HttpClient) { }
 
   getGrupos(){   
@@ -50,5 +52,12 @@ export class GrupoService {
 
   getMonto(id:number){
     return this.http.get("https://travlrsipii.herokuapp.com/api/v1/ManejoFondosApi/ManejoFondos?id="+id,httpOptions);
+  }
+
+  setIdActual(id:any){
+    this.idGrupoActual=id;
+  }
+  getIdActual(){
+    return  this.idGrupoActual;
   }
 }

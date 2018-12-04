@@ -11,13 +11,15 @@ export class ActividadesComponent implements OnInit {
 
   @Input()idGrupo:any;
 
+  ngOnChanges(data:any){}
+
   constructor() { }
 
   ngOnInit() {
   }
 
   onActivate(ComponentRef){
-    //ComponentRef.cargarDatos(5);
+    //ComponentRef.cargarDatos(this.idGrupo);
   }
 
 }

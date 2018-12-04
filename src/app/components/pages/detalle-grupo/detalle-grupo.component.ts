@@ -20,10 +20,13 @@ export class DetalleGrupoComponent implements OnInit {
     private _router: Router
   ) { }
 
+  ngOnChanges(){}
+
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get("id");
-    console.log("en detalle id" + id);
-    this._grupoService.getDetalleGrupo(+id).subscribe(rta => {
+    this.idGrupo = this.route.snapshot.paramMap.get("id");
+    this._grupoService.setIdActual(this.idGrupo);
+    console.log("en detalle id" + this.idGrupo);
+    this._grupoService.getDetalleGrupo(+this.idGrupo).subscribe(rta => {
       this.objeto = rta;
       this.idGrupo = this.objeto.grupoID;
       this.nombreGrupo = this.objeto.nombreGrupo;

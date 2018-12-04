@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GrupoService } from "../../../services/grupo.service";
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+import { GrupoService } from "../../../services/grupo.service";
 
 
 @Component({
@@ -10,24 +10,27 @@ import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 })
 export class FondoComunComponent implements OnInit {
 
+  idGrupo:any;
+  monto: any;
+
   constructor(
     private _grupoService: GrupoService,
     private route: ActivatedRoute,
-    private _router: Router) { }
-  monto: any;
+    private _router: Router,
+    private activatedRoute: ActivatedRoute) { }
+  
 
   ngOnInit() {
     console.log("entroo");
-    let id = this.route.snapshot.paramMap.get("id");
-    console.log("IDDD " + +id);
-    this._grupoService.getMonto(+id).subscribe(
+    this.idGrupo=this._grupoService.getIdActual();
+    console.log("IDDD " + this.idGrupo);
+    this._grupoService.getMonto(this.idGrupo).subscribe(
       rta => {
         this.monto = rta;
         console.log(rta);
       },
       err => {
         console.log(err);
-
       }
     );
   }

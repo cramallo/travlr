@@ -34,7 +34,7 @@ export class FullcalendarComponent implements OnInit {
   ) {}
 
   ngOnInit() {      
-    this.idGrupo=this.route.snapshot.paramMap.get("id");
+    this.idGrupo=this._grupoService.getIdActual();    
     this.calendarOptions = {
       editable: true,
       eventLimit: true,
@@ -53,6 +53,13 @@ export class FullcalendarComponent implements OnInit {
     };    
     this.getActividades();
   }
+
+  cargarDatos(id:any){
+    this.idGrupo=id;
+    console.log("ID GRUPOOO");
+    console.log(this.idGrupo);
+    this.getActividades();
+  }
  
   modalActividad() {
     console.log(this.fechaSelected);
@@ -67,7 +74,7 @@ export class FullcalendarComponent implements OnInit {
     console.log("actividad a dar de alta");
     console.log(act);
     let actividad = new Actividad(this.idGrupo, act);
-
+    console.log(JSON.stringify(actividad));
     this._grupoService.crearActividad(actividad).subscribe(
       rta => {
         this.getActividades();
