@@ -72,10 +72,10 @@
                     <span *ngIf="i==4 || i==9 || i==14 || i==19 || i==24 || i==29" class="round round-danger">{{miembro.userName[0]}}</span> 
                   </td>
                   <td>
-                    <h6>Sunil Joshi</h6>
-                    <small class="text-muted">Web Designer</small>
+                    <h6>{{miembro.nickName}}</h6>
+                    <small class="text-muted">{{miembro.email}}</small>
                   </td>
-                  <td>Elite Admin</td>
+                  <td>{{miembro.userName}}</td>
                   <td><span class="label label-light-success">Miembro</span></td>
                 <!-- Eliminar boton -->
                   <!-- <td>
