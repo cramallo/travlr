@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { GrupoService } from "../../../services/grupo.service";
+import { CalendarComponent } from "ng-fullcalendar";
+import { Options } from "fullcalendar";
+import { EventService } from "../../../services/event.service";
+import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
+import { map } from "rxjs/operators";
+
+//MODELS
+import { Monto } from '../../../models/monto';
+
 
 
 @Component({
@@ -18,25 +27,61 @@ export class FondoComunComponent implements OnInit {
     private route: ActivatedRoute,
     private _router: Router,
     private activatedRoute: ActivatedRoute) { }
+
+    start() {
+      this.idGrupo=this._grupoService.getIdActual();
+      this._grupoService.getMonto(this.idGrupo).subscribe(
+        rta => {
+          this.monto = rta;
+          console.log(rta);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    }
   
 
   ngOnInit() {
-    console.log("entroo");
+    this.start()
+  }
+
+  egresar(data: any) {
     this.idGrupo=this._grupoService.getIdActual();
-    console.log("IDDD " + this.idGrupo);
-    this._grupoService.getMonto(this.idGrupo).subscribe(
+    let monto = new Monto(this.idGrupo, data.monto*-1);
+    this._grupoService.setMonto(monto).subscribe(
       rta => {
         this.monto = rta;
         console.log(rta);
+        document.getElementById("cancelar").click();
+        this.start();
+
       },
       err => {
         console.log(err);
+        document.getElementById("cancelar").click();
+
       }
     );
   }
 
-  egresar(data: any) {
+  ingresar(data: any) {
+    this.idGrupo=this._grupoService.getIdActual();
+    let monto = new Monto(this.idGrupo, data.monto);
+    this._grupoService.setMonto(monto).subscribe(
+      rta => {
+        this.monto = rta;
+        console.log(rta);
+        document.getElementById("cancelar2").click();
+        this.start();
 
+      },
+      err => {
+        console.log(err);
+        document.getElementById("cancelar2").click();
+
+      }
+    );
   }
   
 

@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Grupo } from '../models/grupo';
 import { Observable } from 'rxjs/internal/Observable';
 import { Actividad } from '../models/actividad';
+import { Monto } from '../models/monto';
+
 import { map } from 'rxjs/operators';
 
 const httpOptions = {
@@ -52,6 +54,10 @@ export class GrupoService {
 
   getMonto(id:number){
     return this.http.get("https://travlrsipii.herokuapp.com/api/v1/ManejoFondosApi/ManejoFondos?id="+id,httpOptions);
+  }
+
+  setMonto(monto:Monto){
+    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/ManejoFondosApi/ManejoFondos",monto,httpOptions);
   }
 
   setIdActual(id:any){

@@ -1,6 +1,6 @@
 <div class="col-lg-12 monto-box">
   <div class="row">
-    <h5 class="text-monto-1"> Monto actual: </h5><h4 class="text-monto">$10.000</h4>
+    <h5 class="text-monto-1"> Monto actual: </h5><h4 class="text-monto">${{monto.fondoComun.monto}}</h4>
   </div>
 </div>
 
@@ -24,13 +24,13 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <form #n="ngForm">
+        <form #f="ngForm" (ngSubmit)="ingresar(f.value)">
           <div class="form-group">
             <label for="recipient-name" class="control-label">Monto a ingresar:</label>
-            <input type="number" name="idGrupo" class="form-control" id="nombreEncuesta" ngModel required>
+            <input type="number" name="monto" class="form-control" id="monto" ngModel required>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button id="cancelar2" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             <button type="button submit" class="btn btn-info">Confirmar</button>
           </div>
         </form>
@@ -55,7 +55,7 @@
             <input type="number" name="monto" class="form-control" id="monto" ngModel required>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button id="cancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             <button type="button submit" class="btn btn-info">Confirmar</button>
           </div>
         </form>
