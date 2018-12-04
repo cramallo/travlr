@@ -20,6 +20,7 @@ import { EventService } from '../../services/event.service';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { FondoComunComponent } from './fondo-comun/fondo-comun.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
+import { FechaDisponiblesComponent } from './fecha-disponibles/fecha-disponibles.component';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
         HeaderComponent,
         SidebarComponent,
         DetalleGrupoComponent,             
-        FullcalendarComponent, ActividadesComponent, FondoComunComponent, EncuestasComponent
+        FullcalendarComponent, ActividadesComponent, FondoComunComponent, EncuestasComponent, FechaDisponiblesComponent
     ],
     exports: [
        PagesComponent,

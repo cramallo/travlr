@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { componentRefresh } from '@angular/core/src/render3/instructions';
+import { ComponentRef } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-actividades',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActividadesComponent implements OnInit {
 
+  @Input()idGrupo:any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onActivate(ComponentRef){
+    //ComponentRef.cargarDatos(5);
   }
 
 }

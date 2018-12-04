@@ -6,6 +6,7 @@ import { LoginGuardGuard } from "../../services/guards/login-guard.guard";
 import { FullcalendarComponent } from "../../components/pages/fullcalendar/fullcalendar.component";
 import { EncuestasComponent } from "../../components/pages/encuestas/encuestas.component";
 import { FondoComunComponent } from "../../components/pages/fondo-comun/fondo-comun.component";
+import { FechaDisponiblesComponent } from "./fecha-disponibles/fecha-disponibles.component";
 
 const pagesRoutes: Routes = [
   {
@@ -33,6 +34,10 @@ const pagesRoutes: Routes = [
           {
             path: "fondo",
             component: FondoComunComponent
+          },
+          {
+            path: "fechas",
+            component: FechaDisponiblesComponent
           }
         ]
       }

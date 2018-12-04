@@ -47,4 +47,8 @@ export class GrupoService {
   crearActividad(actividad:Actividad){
     return this.http.post("https://travlrsipii.herokuapp.com/api/v1/ActividadesApi/CrearActividad",actividad,httpOptions);
   }
+
+  getMonto(id:string){
+    return this.http.get("https://travlrsipii.herokuapp.com/api/v1/ManejoFondosApi/ManejoFondos?id="+id,httpOptions);
+  }
 }

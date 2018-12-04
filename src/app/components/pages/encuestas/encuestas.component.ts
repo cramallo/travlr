@@ -9,6 +9,8 @@ export class EncuestasComponent implements OnInit {
 
   constructor() { }
 
+  cargarDatos(id:number){}
+
   ngOnInit() {
   }
 
