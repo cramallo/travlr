@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { GrupoService } from "../../../services/grupo.service";
 import { Grupo } from "../../../models/grupo";
 import { Router } from "@angular/router";
