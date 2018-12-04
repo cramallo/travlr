@@ -20,7 +20,7 @@ export class GrupoService {
   constructor(private http:HttpClient) { }
 
   getGrupos(){   
-    return this.http.get<any>("https://travlrsipii.herokuapp.com/api/v1/GruposApi",httpOptions);
+    return this.http.get<any>("https://travlrsipii.herokuapp.com/api/v1/GruposApi/Grupos",httpOptions);
   }
 
   getDetalleGrupo(id:number){
