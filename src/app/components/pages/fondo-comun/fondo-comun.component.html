@@ -1,47 +1,66 @@
+<div class="col-lg-12 monto-box">
+  <div class="row">
+    <h5 class="text-monto-1"> Monto actual: </h5><h4 class="text-monto">$10.000</h4>
+  </div>
+</div>
 
-  <div class="col-lg-12 monto-box">
-    <div class="row">
-          <h4 class="text-monto">$10.000</h4>
+<div class="col-lg-12">
+  <div class="pull-right">
+    <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal"
+      data-target="#modelRegistrarEgreso">Registrar egreso</button>
+  </div>
+  <div class="pull-right">
+    <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal"
+      data-target="#modelRegistrarIngreso">Registrar ingreso</button>
+  </div>
+</div>
+
+<!-- MODAL INGRESO -->
+<div class="modal fade" id="modelRegistrarIngreso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Ingresos</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form #n="ngForm">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Monto a ingresar:</label>
+            <input type="number" name="idGrupo" class="form-control" id="nombreEncuesta" ngModel required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button submit" class="btn btn-info">Confirmar</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+</div>
+<!-- FIN MODAL INGRESO -->
 
-  <div class="col-lg-12">
-      <div class="pull-right">
-        <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal" data-target="#modelRegistrarEgreso">Registrar egreso</button>
+<!-- MODAL EGRESO -->
+<div class="modal fade" id="modelRegistrarEgreso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Egresos</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
-      <div class="pull-right">
-        <button type="button" class="btn btn-sm waves-effect waves-light btn-outline-info margin-top-30" data-toggle="modal" data-target="#modelRegistrarIngreso">Registrar ingreso</button>
-      </div>
-  </div>
-
-  <div class="modal fade" id="modelRegistrarIngreso" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="col-lg-12">
-            <div class="row align-ct">
-              <p class="fin-format">Monto a ingresar: </p>
-              <input type="number" id="montoIngreso" class="input-monto-style">
-            </div>
-            <div class="row pull-right">
-                <button type="button" class="btn btn-m waves-effect waves-light btn-outline-info btn-aceptar-fondo" data-toggle="modal">Aceptar</button>
-            </div>
+      <div class="modal-body">
+        <form #n="ngForm">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Monto a egresar:</label>
+            <input type="number" name="idGrupo" class="form-control" id="nombreEncuesta" ngModel required>
           </div>
-        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button submit" class="btn btn-info">Confirmar</button>
+          </div>
+        </form>
       </div>
     </div>
-
-    <div class="modal fade" id="modelRegistrarEgreso" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="col-lg-12">
-              <div class="row align-ct">
-                <p class="fin-format">Monto a egresar: </p>
-                <input type="number" id="montoEgreso" class="input-monto-style">
-              </div>
-              <div class="row pull-right">
-                  <button type="button" class="btn btn-m waves-effect waves-light btn-outline-info btn-aceptar-fondo" data-toggle="modal">Aceptar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
+</div>
+<!-- FIN MODAL EGRESO -->
