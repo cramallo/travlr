@@ -16,7 +16,7 @@ import { Evento } from "../../../models/evento";
   styleUrls: ["./fullcalendar.component.css"]
 })
 export class FullcalendarComponent implements OnInit {
-  @Input("idGrupo") idGrupo: any;
+  idGrupo: any;
   fechaSelected: string;
   eventos: any;
   eventosFormat = [];
@@ -46,7 +46,12 @@ export class FullcalendarComponent implements OnInit {
         right: "month,agendaWeek,listMonth"
       },
       events: this.eventos
-    };
+    };    
+  }
+
+  cargarDatos(id:number){
+    this.idGrupo=id;
+    this.ngOnInit();
     this.getActividades();
   }
  

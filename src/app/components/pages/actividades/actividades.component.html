@@ -17,9 +17,8 @@
       </li>
   </ul>
   <!-- Tab panes -->
-  <div class="tab-content" id="calendario">
-    <!-- <app-fullcalendar></app-fullcalendar> -->
-    <router-outlet></router-outlet>
+  <div class="tab-content" id="calendario">   
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
   </div>
 </div>
 
