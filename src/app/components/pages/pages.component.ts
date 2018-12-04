@@ -8,6 +8,7 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class PagesComponent implements OnInit {
   
+  usuario:any;
 
   constructor(private _usuarioService:UsuarioService) { }
 
@@ -18,7 +19,8 @@ export class PagesComponent implements OnInit {
   getUser(){
     this._usuarioService.getUser().subscribe(
       rta=>{
-        console.log("Datos usuario:"+rta);
+        this.usuario=rta;
+        console.log(JSON.stringify(rta));
       },
       err=>{
         console.log("Error me");

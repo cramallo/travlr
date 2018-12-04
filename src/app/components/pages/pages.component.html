@@ -4,9 +4,9 @@
 <router-outlet></router-outlet-->
 
 
-<div id="main-wrapper">
-    <app-header></app-header>
-    <app-sidebar></app-sidebar>
+<div id="main-wrapper" class="fix-header">
+    <app-header [usuario]="usuario"></app-header>
+    <app-sidebar [usuario]="usuario"></app-sidebar>
     <div class="page-wrapper">
       <div class="container-fluid">
         <!--breadcrums></breadcrums-->

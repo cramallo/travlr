@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,OnChanges } from '@angular/core';
 import { UsuarioService } from '../../../services/usuario.service';
 
 declare function init_plugins();
@@ -8,7 +8,9 @@ declare function init_plugins();
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit {  
+
+  @Input('usuario') usuario:any;
 
   constructor(private _usuarioService:UsuarioService) { }
 
@@ -16,8 +18,16 @@ export class SidebarComponent implements OnInit {
     //init_plugins();
   }
 
+  ngOnChanges(){    
+    this.cargarDatos();
+  }
+
   logout(){
     this._usuarioService.logout();
+  }
+
+  cargarDatos(){
+
   }
 
 }
