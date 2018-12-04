@@ -49,10 +49,10 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <form #n="ngForm">
+        <form #n="ngForm" (ngSubmit)="egresar(n.value)">
           <div class="form-group">
             <label for="recipient-name" class="control-label">Monto a egresar:</label>
-            <input type="number" name="idGrupo" class="form-control" id="nombreEncuesta" ngModel required>
+            <input type="number" name="monto" class="form-control" id="monto" ngModel required>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

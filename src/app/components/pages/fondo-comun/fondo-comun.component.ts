@@ -12,4 +12,7 @@ export class FondoComunComponent implements OnInit {
   ngOnInit() {
   }
 
+  egresar(data: any) {
+  }
+
 }

@@ -30,9 +30,6 @@ export class DetalleGrupoComponent implements OnInit {
       this.integrantes = this.objeto.usuarios;
       console.log(rta);
     }, err => { });
-
-    //HARDCODEO
-    this.cargarDetalle();
   }
 
   dejarGrupo() {
@@ -44,11 +41,5 @@ export class DetalleGrupoComponent implements OnInit {
         console.log("Se produjo un error al dejar el grupo");
       }
     );
-  }
-
-  //HARDCODEO
-  cargarDetalle() {
-
-
   }
 }
