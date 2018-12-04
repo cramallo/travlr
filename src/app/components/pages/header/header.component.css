@@ -6,3 +6,9 @@
 .navbar{
     background:white;
 }
+
+.navbar-user{
+    justify-content: flex-end;
+    display: flex;
+
+}
