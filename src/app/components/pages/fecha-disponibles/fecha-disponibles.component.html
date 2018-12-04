@@ -1,3 +1,41 @@
-<p>
-  fecha-disponibles works!
-</p>
+<form class="fechas-form">
+  <p>Fecha de inicio</p>
+  <div class="row">
+    <div class="form-group">
+      <div class="col-xs-12">
+        <input ngModel name="startDay" class="form-input" type="text" required placeholder="DD">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-12">
+        <input ngModel name="startMonth" class="form-input" type="text" required placeholder="MM">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-12">
+        <input ngModel name="startYear" class="form-input" type="text" required placeholder="AAAA">
+      </div>
+    </div>
+  </div>
+  <p>Fecha de finalización</p>
+  <div class="row">
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input ngModel name="endDay" class="form-input" type="text" required placeholder="DD">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input ngModel name="endMonth" class="form-input" type="text" required placeholder="MM">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input ngModel name="endYear" class="form-input" type="text" required placeholder="AAAA">
+        </div>
+    </div>
+  </div>
+  <div class="col-xs-12 p-b-20">
+    <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Ingresar</button>
+  </div>
+</form>
