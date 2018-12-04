@@ -1,0 +1,38 @@
+.margin-top-30{
+    margin-top:30px;
+}
+
+.text-monto{
+    color: #06d79c;
+    font-size: 65px;
+    margin-top:60px;
+}
+
+.monto-box{
+    display:flex;
+    justify-content: center;
+}
+
+.input-monto-style{
+    height: 25px;
+    width: 30%;
+    margin-left: 10px;
+}
+
+.align-ct{
+    display:flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-aceptar-fondo{
+    color: #fff;
+    border-color:  #06d79c;
+    background-color: #06d79c;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
