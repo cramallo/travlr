@@ -1,11 +1,20 @@
 .margin-top-30{
-    margin-top:30px;
+    margin-top:50px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom: 10px;
 }
 
 .text-monto{
     color: #06d79c;
     font-size: 65px;
     margin-top:60px;
+}
+
+.text-monto-1{
+    font-size: 40px;
+    margin-top:60px;
+    margin-right: 20px;
 }
 
 .monto-box{
