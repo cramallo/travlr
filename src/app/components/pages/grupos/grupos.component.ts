@@ -26,7 +26,7 @@ export class GruposComponent implements OnInit {
   getGrupos() {
     this._grupoService.getGrupos().subscribe(res=>{
       console.log(res);
-    })
+    });
     // this._grupoService.getGrupos().subscribe(
     //   rta => {
     //     console.log(rta);

@@ -29,23 +29,23 @@ export class GrupoService {
 
   crear(nombreGrupo:string){
     let objeto={nombre:nombreGrupo};
-    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/GruposApi/Create",objeto);
+    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/GruposApi/Create",objeto,httpOptions);
   }
 
   unirse(idGrupo:number){
     let objeto={grupoID:idGrupo};
-    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/GruposApi/Unirse",objeto);
+    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/GruposApi/Unirse",objeto,httpOptions);
   }
 
   dejarGrupo(id:number){    
-    return this.http.get("https://travlrsipii.herokuapp.com/api/v1/GruposApi/DejarGrupo?id="+id);
+    return this.http.get("https://travlrsipii.herokuapp.com/api/v1/GruposApi/DejarGrupo?id="+id,httpOptions);
   }
 
   getActividades(id:number){
-    return this.http.get<any[]>("https://travlrsipii.herokuapp.com/api/v1/ActividadesApi/ListaActividades?id="+id);
+    return this.http.get<any[]>("https://travlrsipii.herokuapp.com/api/v1/ActividadesApi/ListaActividades?id="+id,httpOptions);
   }
 
   crearActividad(actividad:Actividad){
-    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/ActividadesApi/CrearActividad",actividad);
+    return this.http.post("https://travlrsipii.herokuapp.com/api/v1/ActividadesApi/CrearActividad",actividad,httpOptions);
   }
 }

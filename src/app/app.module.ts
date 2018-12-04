@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -9,7 +9,6 @@ import { PagesModule } from './components/pages/pages.module';
 import { UsuarioService } from './services/usuario.service';
 import { GrupoService } from './services/grupo.service';
 import { RegisterComponent } from './components/register/register.component';
-import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,   
     PagesModule 
   ],
-  providers: [
-    CookieService,
+  providers: [    
     UsuarioService,
     GrupoService
   ],
